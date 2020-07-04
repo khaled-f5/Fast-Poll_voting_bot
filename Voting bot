@@ -1,20 +1,18 @@
 import time
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
 for i in range(5000):
     for j in range(5000):
         start = time.time()
-        # driver = webdriver.Chrome('C:\\Users\\kaf-1\\Downloads\\chromedriver.exe')
-        driver.get('https://fast-poll.com/poll/189a0d57')
+        driver = webdriver.Chrome('path to chromedriver.exe')
+        driver.get('vote link')
         check = time.time() - start
         try:
             time.sleep(1)
             button_cookie = driver.find_element_by_id('gdpr-cookie-accept')
             button_cookie.click()
 
-            button_select = driver.find_element_by_xpath('//*[@id="poll-form"]/div[4]/label')
+            button_select = driver.find_element_by_xpath('xpath for the voting button')
             button_select.click()
 
             driver.execute_script("window.scrollTo(0, 1000);")
