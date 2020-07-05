@@ -15,7 +15,7 @@ for i in range(5000):
             button_select = driver.find_element_by_xpath('xpath for the voting button')
             button_select.click()
 
-            driver.execute_script("window.scrollTo(0, 1000);")
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
             button_submit = driver.find_element_by_xpath('//*[@id="poll-form"]/div[15]/button')
             button_submit.click()
